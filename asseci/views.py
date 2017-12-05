@@ -4,4 +4,4 @@ from django.shortcuts import render
 
 
 def accueil(request):
-    return render(request, 'plateforme/home.html', {})
+    return render(request, 'asseci/accueil.html', {})

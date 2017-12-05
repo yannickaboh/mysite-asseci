@@ -9,6 +9,6 @@ app_name = 'asseci'
 urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
-    url(r'^accueil/', views.accueil, name='accueil'),
+    url(r'^$', views.accueil, name='accueil'),
 
 ]
