@@ -10,5 +10,6 @@ urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.accueil, name='accueil'),
+    url(r'^presentation/$', views.presentation, name='presentation'),
 
 ]

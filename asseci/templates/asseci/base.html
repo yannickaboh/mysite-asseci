@@ -19,7 +19,7 @@
 <meta property="og:image" content=""/>
 <meta property="og:site_name" content="ASSECI "/>
 <meta property="og:description" content="ASSECI" />
-<meta property="og:street-address" content="36 cours de reims"/>
+<meta property="og:street-address" content="IAI campus"/>
 <meta property="og:locality" content="libreville"/>
 <meta property="og:postal-code" content="IAI"/>
 <meta property="og:country-name" content="GABON LIBREVILLE"/>
@@ -93,9 +93,9 @@
 
 <nav class="navigation" style="width: 100%;">
   <ul class="sf-menu">
-    <li> <a href=":accueil' %}">Accueil</a>
+    <li> <a href="{% url 'asseci:accueil' %}">Accueil</a>
     <li role="presentation" class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'asseci:presentation' %}" role="button" aria-haspopup="true" aria-expanded="false">
         Présentation
       </a>
       <ul class="dropdown-menu">
@@ -171,7 +171,7 @@
 
 <li> <a href="../compte/" target="_self" rel="v:url" property="v:title">ASSECI</a></li>
 
-<li> <a href="../compte/" target="_self" rel="v:url" property="v:title">ACCUEIL</a></li>
+<li> <a href="../compte/" target="_self" rel="v:url" property="v:title">{% block vtitle %}{% endblock %}</a></li>
 
       </ol>
         </div>
