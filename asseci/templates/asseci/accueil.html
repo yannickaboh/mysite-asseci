@@ -1,1 +1,184 @@
-bonjour!!!!!
+
+{% extends 'asseci/base.html' %}
+
+
+{% block title %}ACCUEIL{% endblock %}
+
+
+{% block content %}
+
+{% load staticfiles %}
+
+  <!-- Start Content -->
+  <div class="main" role="main">
+    <div id="content" class="content full">
+      <div class="container">
+        
+
+
+<div class="row"> 
+  <!-- Start Featured Blocks -->
+  <div class="featured-blocks clearfix">
+    <div class="col-md-4 col-sm-4 featured-block"> <a href="societe-notre-equipe.html" class="img-thumbnail"> 
+    <img src="{% static 'asseci/media/362/staff3.jpg' %}" alt="staff"> 
+    <strong>Le Bureau</strong> <span class="more">Plus</span> </a> </div>
+    <div class="col-md-4 col-sm-4 featured-block"> <a href="societe-notre-equipe.html" class="img-thumbnail"> 
+    <img src="{% static 'asseci/media/362/staff11.jpg' %}" alt="staff"> 
+    <strong>Les Membres</strong> <span class="more">Plus</span> </a> </div>
+    <div class="col-md-4 col-sm-4 featured-block"> <a href="societe-nos-services.html" class="img-thumbnail"> 
+    <img src="{% static 'asseci/media/362/staff1.jpg' %}" alt="staff"> 
+    <strong>Nos actualités</strong> <span class="more">Plus</span> </a> </div>
+  </div>
+  <!-- End Featured Blocks --> 
+</div>
+
+
+
+<div class="row">
+<div class="col-md-8 col-sm-6"> 
+<!-- Events Listing -->
+<div class="listing events-listing">
+  
+  <header class="listing-header">
+    <h3>Evénements</h3>
+  </header>
+  
+  <section class="listing-cont">
+    <ul>
+      
+      <li class="item event-item">
+     
+        <div class="event-detail">
+         <h4><a href="single-post.html">Visite du Répresentant Résident de l'IAI Cameroun</a></h4> 
+          <span class="event-dayntime meta-data">6 Mars 2018 | 11h15</span> </div>
+        <div class="to-event-url">
+     <div><a href="single-post.html" class="btn btn-default btn-sm">+ d'infos</a></div> 
+        </div>
+      </li>
+      
+      <li class="item event-item">
+     
+        <div class="event-detail">
+         <h4><a href="single-post-2.html">Rencontre avec le Parrain STEVE</a></h4> 
+          <span class="event-dayntime meta-data">6 Juillet 2018 | 17h15</span> </div>
+        <div class="to-event-url">
+     <div><a href="single-post-2.html" class="btn btn-default btn-sm">+ d'infos</a></div> 
+        </div>
+      </li>
+      
+    </ul>
+  </section>
+</div>
+<div class="spacer-30"></div>
+
+<!-- Latest News -->
+  <div class="listing post-listing">
+    
+    <header class="listing-header">
+      <h3>Derniers Posts</h3>
+    </header>
+    
+    <section class="listing-cont">
+      <ul>
+        
+        <li class="item post">
+          <div class="row">
+            <div class="col-md-4"> <a href="blog/2015/07/20/test.html" class="media-box"> <img src="{% static 'asseci/theme/fr/images/img.png' %}" alt="" style="background: url({% static 'asseci/media/392/c++.png' %}) no-repeat;background-size: 100%;  background-position: center;" class="img-thumbnail"> </a></div>
+            <div class="col-md-8">
+              <div class="post-title">
+                <h2><a href="blog/2015/07/20/test.html">Forum - Programmation C++</a></h2>
+                <span class="meta-data"><i class="fa fa-calendar"></i> 20 juil 2018</div>
+              <p>La difficulté dans le C++ réside au niveau de l'implémentation des tableaux et des pointeurs...</p>
+            </div>
+          </div>
+        </li>
+        
+        <li class="item post">
+          <div class="row">
+            <div class="col-md-4"> <a href="blog/2012/12/21/bienvenue-sur-votre-blog.html" class="media-box"> <img src="{% static 'asseci/theme/fr/images/img.png' %}" alt="" style="background: url({% static 'asseci/media/392/graphe.png' %}) no-repeat;background-size: 100%;  background-position: center;" class="img-thumbnail"> </a></div>
+            <div class="col-md-8">
+              <div class="post-title">
+                <h2><a href="blog/2012/12/21/bienvenue-sur-votre-blog.html">Mon Blog - Théorie des Graphes</a></h2>
+                <span class="meta-data"><i class="fa fa-calendar"></i> 21 Fev 2018</div>
+              <p>La matrice d'adjacence permet de déterminer l'existence d'une possible connexité au niveau de chaque chaîne ou cycle, surtout si on est dans un graphe non orienté ...</p>
+            </div>
+          </div>
+        </li>
+        
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+
+
+<!-- Start Sidebar -->
+
+<div class="col-md-4 col-sm-6">
+<!-- Latest Sermons -->
+<div class="listing sermons-listing">
+<header class="listing-header"> 
+  
+  <h3>Nouveaux Cours</h3>
+   
+</header>
+<section class="listing-cont">
+<ul>
+
+<li class="item sermon featured-sermon"> <span class="date">15 jan 2018</span> 
+  
+  <h4><a href="http://youtube.com/">Prise en main Django</a></h4>
+  
+  <div class="featured-sermon-video"> 
+    
+    <iframe width="200" height="150" src="https://www.youtube.com/watch?v=SjRlmyEVXq4"></iframe>
+     
+  </div>
+  
+  <p>Nous avons decider de mettre à votre disposition ce cours d'une durée de 1h30 de pouvoir démarrer un projet avec le Framework Web Django qui utilise le langage Python...</p>
+   
+</li>
+
+
+
+
+<li class="item sermon">
+  <h2 class="sermon-title"><a href="blog/2015/07/20/test.html">Réseaux - Administration Réseau</a></h2>
+  <span class="meta-data"><i class="fa fa-calendar"></i> 20 jan 2018</span> </li>
+
+<li class="item sermon">
+  <h2 class="sermon-title"><a href="blog/2012/12/21/bienvenue-sur-votre-blog.html">Developpement - Mobile - Ionic Framework</a></h2>
+  <span class="meta-data"><i class="fa fa-calendar"></i> 21 jan 2018</span> </li>
+
+</ul>
+
+</section>
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+<!-- Start Featured Gallery -->
+  <div class="featured-gallery">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-3">
+          <h4>Galerie</h4>
+          <a href="timeline.html" class="btn btn-default btn-lg">Plus</a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img6.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img6.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-video"> <a href="https://www.youtube.com/watch?v=w8OpZLx81t0" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img3.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img4.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img4.jpg' %}" alt=""> </a> </div>
+      </div>
+    </div>
+  </div>
+<!-- End Featured Gallery --> 
+
+
+
+  {% endblock %}
