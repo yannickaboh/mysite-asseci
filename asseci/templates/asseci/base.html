@@ -54,8 +54,8 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-9 col-xs-9">
-          <h1 class="logo" style="font-size: 30px;">
-                        <img src="{% static 'asseci/media/72/logo_asseci.png' %}" alt="ASSECI" class="img-circle" />
+          <h1 class="logo">
+                        <img src="{% static 'asseci/media/72/logo_asseci.jpg' %}" alt="ASSECI" class="img-circle">
             ASSECI 
                     </h1>
               
@@ -99,8 +99,8 @@
         Présentation
       </a>
       <ul class="dropdown-menu">
-        <li> <a href="#">Notre Mission</a>
-        <li> <a href="#">Le Bureau</a>
+        <li> <a href="{% url 'asseci:missions' %}">Notre Mission</a>
+        <li> <a href="{% url 'asseci:bureau' %}">Le Bureau</a>
       </ul>
     </li>
     <li> <a href="#">Membres</a>

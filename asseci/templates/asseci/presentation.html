@@ -58,27 +58,27 @@ Voici maintenant l’Ecole et l’Association des diplômés, une nouvelle fois 
           <!-- Start Sidebar -->
           <div class="col-md-3 sidebar">
             <div class="widget sidebar-widget search-form-widget">
-  <div class="input-group input-group-lg">
+  <!--div class="input-group input-group-lg">
 <form action="http://association-2.kiubi-web.com/recherche/cms/" method="get" style="display: inherit;">
       <input name="r" type="text" class="form-control"  id="r" placeholder="Rechercher..." />
       <span class="input-group-btn"><input type="submit" value="Ok" class="submit btn btn-default" title="Lancer la recherche" style="height:34px;" /></span> 
 </form>
-</div>
+</div-->
 </div>
 
             
 <div class="widget sidebar-widget">
   
   <div class="sidebar-widget-title">
-    <h3>Catégories</h3>
+    <h3>Présentation</h3>
   </div>
   
   <ul>
     
-      <li><a href="blog/index.html" title="Toutes les cat&eacute;gories" class="actif">Toutes les catégories</a></li>
+      <li><a href="{% url 'asseci:bureau' %}" class="actif">Le Bureau</a></li>
       
       
-      <li><a href="blog/Generale/index.html" title="G&eacute;n&eacute;rale" class="">Générale (2)</a></li>
+      <li><a href="{% url 'asseci:missions' %}" class="">Les Missions</a></li>
       
       
   </ul>
@@ -89,6 +89,10 @@ Voici maintenant l’Ecole et l’Association des diplômés, une nouvelle fois 
       </div>
     </div>
   </div>
+
+  <div class="spacer-30"></div>
+  <div class="spacer-30"></div>
+  <div class="spacer-30"></div>
 <!-- End Content -->
   
 

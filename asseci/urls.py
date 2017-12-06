@@ -11,5 +11,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.accueil, name='accueil'),
     url(r'^presentation/$', views.presentation, name='presentation'),
+    url(r'^presentation/le-bureau/$', views.bureau, name='bureau'),
+    url(r'^presentation/nos-missions/$', views.missions, name='missions'),
 
 ]
