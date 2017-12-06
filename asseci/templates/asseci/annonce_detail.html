@@ -1,0 +1,143 @@
+
+{% extends 'asseci/base.html' %}
+
+
+{% block title %}ANNONCES - DETAILS{% endblock %}
+
+{% block vtitle %}ANNONCES - DETAILS{% endblock %}
+
+
+{% block content %}
+
+{% load staticfiles %}
+
+  <!-- Start Content -->
+  <div class="main" role="main">
+    <div id="content" class="content full">
+      <div class="container">
+        <div class="row"><div class="col-md-9 contenu">
+          
+
+
+ 
+<header class="single-post-header clearfix">
+  <nav class="btn-toolbar pull-right"> </nav>
+  <h2 class="post-title">{{ object.evenement }}</h2>
+</header>
+<article class="post-content">
+  <div class="event-description"> <!--img src="media/412/event-img2.jpg" class="img-responsive"-->
+    <div class="spacer-20"></div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Tous les détails</h3>
+          </div>
+          <div class="panel-body">
+            <ul class="info-table">
+              <li><i class="fa fa-calendar"></i> <strong>{{ object.jour }}</strong> | {{ object.dateCreation }}</li>
+              <li><i class="fa fa-clock-o"></i> {{ object.heure }}</li>
+              <li><i class="fa fa-map-marker"></i> {{ object.lieu }}</li>
+              <li><i class="fa fa-phone"></i> {{ object.contact }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <ul class="list-group">
+          <li class="list-group-item"> <span class="badge">{{ object.nbreParticipants }}</span> Participants </li>
+          <li class="list-group-item"> <span class="badge">{{ object.bureau }}</span> Équipe </li>
+        </ul>
+      </div>
+    </div>
+    <br />
+
+      <h4>
+        Ordre du Jour</h4>
+      <br />
+      <ol>
+        <li>
+          {{ object.odd1 }}
+        </li>
+        <li>
+          {{ object.odd2 }}
+        </li>
+        <li>
+          {{ object.odd3 }}
+        </li>
+        <li>
+          {{ object.odd4 }}
+        </li>
+        <li>
+          {{ object.odd5 }}
+        </li>
+      </ol>
+
+      <br />
+      <address>
+        NB: La présente de tous sera vivement souhaiter et tout retard sera sanctionné par une amende.</address>.<br />
+
+
+        <br />
+      <h4>
+        RAPPORT</h4>
+      {{ object.resume }}<br />
+      <br />
+      <br />
+
+
+  </div>
+</article>
+ 
+
+
+</div>
+
+          <!-- Start Sidebar -->
+          <!-- Start Sidebar -->
+          <div class="col-md-3 sidebar">
+            
+<div class="widget sidebar-widget">
+  
+  <div class="sidebar-widget-title">
+    <h3><i class="fa fa-gears"></i> &nbsp;Options</h3>
+  </div>
+  
+  <ul>
+    
+      <li><i class="fa fa-search"></i> &nbsp;&nbsp;<a href="#" class="actif">Recherche</a></li>
+
+      <li><i class="fa fa-send"></i> &nbsp;&nbsp;<a href="#" class="actif">Mes évènements</a></li>
+      
+      <li><i class="fa fa-edit"></i> &nbsp;&nbsp;<a href="#" class="">Publier</a></li>
+      
+      
+  </ul>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+<!-- Start Featured Gallery -->
+  <div class="featured-gallery">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-3">
+          <h4>Galerie</h4>
+          <a href="timeline.html" class="btn btn-default btn-lg">Plus</a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img6.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img6.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-video"> <a href="{% static 'asseci/media/382/gallery-img3.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img3.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img4.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img4.jpg' %}" alt=""> </a> </div>
+      </div>
+    </div>
+  </div>
+<!-- End Featured Gallery --> 
+
+
+
+  {% endblock %}
