@@ -1,0 +1,88 @@
+
+{% extends 'asseci/base.html' %}
+
+
+{% block title %}DONATION{% endblock %}
+
+{% block vtitle %}DONATION{% endblock %}
+
+
+{% block content %}
+
+{% load staticfiles %}
+
+  <!-- Start Content -->
+  <div class="main" role="main">
+    <div id="content" class="content full">
+      <div class="container">
+        <div class="row"><div class="col-md-9 contenu">
+          
+
+
+<article class="post_simple">
+  <header class="post_header">
+  
+    <h2>Faites vos dons et encouragez par la même voie l'initiative</h2>
+  
+    
+  </header>
+  <article class="post_content">
+    <span style="font-weight: bold;">L'ASSECI </span>en appelle à la bonne volonté de toutes âmes généreuses d'apporter leur soutien financier à cette jeune association dynamique.<br />
+Ces fonds serviront à dôter l'association d'équipements techniques (routeurs, switchs, baies, racks, serveurs, licenses...) et autres gadgets permettant aux jeunes etudiants encore en formation de pouvoir lier la théorie à la pratique y compris bien sur les frais d'hébergement de la plateforme.<br />
+<br />
+<span style="font-weight: bold;">Milles fois merci d'avance à vous chers Parrains!!! vive l'ASSECI!!!</span> <br /><br /><br />
+<span style="font-weight: bold;">Envoyer vos dons par</span> <br />
+<div class="row">
+  <div class="col-md-3">
+    <img src="{% static 'asseci/media/382/airtel.jpg' %}" alt="AIRTEL MONEY" class="img-circle">
+  </div>
+  <div class="col-md-3">
+    <img src="{% static 'asseci/media/382/eu.png' %}" alt="EXPRESS UNION MOBILE">
+  </div>
+  <div class="col-md-3">
+    <img src="{% static 'asseci/media/382/omr.png' %}" alt="ORANGE MONEY">
+  </div>
+  <div class="col-md-3">
+    <img src="{% static 'asseci/media/382/wut.png' %}" alt="WESTERN UNION">
+  </div>
+</div>
+<br />
+Si vous ne souhaitez pas utiliser ces procédés, veuillez nous contacter :<br />
+<br />
+<br />
+<br />
+T&eacute;l. : +24106682353<br />
+Email : <a href="mailto:yannickabohthierry@gmail.com">yannickabohthierry@gmail.com</a>
+  </article>
+</article>
+
+
+</div>
+          <!-- Start Sidebar -->
+          <div class="col-md-3 sidebar"></div>
+          
+        </div>
+      </div>
+    </div>
+  </div> 
+  
+
+
+<!-- Start Featured Gallery -->
+  <div class="featured-gallery">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-3">
+          <h4>Galerie</h4>
+          <a href="timeline.html" class="btn btn-default btn-lg">Plus</a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img6.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img6.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-video"> <a href="{% static 'asseci/media/382/gallery-img3.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img3.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img4.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img4.jpg' %}" alt=""> </a> </div>
+      </div>
+    </div>
+  </div>
+<!-- End Featured Gallery --> 
+
+
+
+  {% endblock %}

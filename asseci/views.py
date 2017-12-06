@@ -65,6 +65,18 @@ def membre(request):
 def membreId(request):
 	return render(request, 'asseci/membreId.html', {})
 
+# Mentions Légales
+def mentionslegales(request):
+	return render(request, 'asseci/mentionslegales.html', {})
+
+# Paiement
+def paiement(request):
+	return render(request, 'asseci/paiement.html', {})
+
+# Plan du Site
+def plan(request):
+	return render(request, 'asseci/plan.html', {})
+
 # Evenements
 class EvenementListView(ListView):
 

@@ -22,5 +22,8 @@ urlpatterns = [
     url(r'^actualites/annonce_list/$', AnnonceListView.as_view(), name='annonce-list'),
     url(r'^actualites/annonce/(?P<pk>\d+)/$', AnnonceDetailView.as_view(), name='annonce-detail'),
     url(r'^actualites/timeline/$', views.timeline, name='timeline'),
+    url(r'^mentions-legales/$', views.mentionslegales, name='mentionslegales'),
+    url(r'^donation/$', views.paiement, name='paiement'),
+    url(r'^plan-du-site/$', views.plan, name='plan'),
 
 ]

@@ -1,0 +1,142 @@
+
+{% extends 'asseci/base.html' %}
+
+
+{% block title %}PLAN DU SITE{% endblock %}
+
+{% block vtitle %}PLAN DU SITE{% endblock %}
+
+
+{% block content %}
+
+{% load staticfiles %}
+
+  <!-- Start Content -->
+  <div class="main" role="main">
+    <div id="content" class="content full">
+      <div class="container">
+        <div class="row"><div class="col-md-12 contenu">
+          
+
+<article class="col-md-8">
+  
+  <h1>Menu principal</h1>
+  
+  <nav>
+    <div class="widget sitemap">
+    <ul class="sf-menu">
+      <li> <a href="{% url 'asseci:accueil' %}">Accueil</a>
+      <li  role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'asseci:presentation' %}" role="button" aria-haspopup="true" aria-expanded="false">
+          Présentation &nbsp;|&nbsp; <a href="{% url 'asseci:missions' %}">Notre Mission</a> &nbsp;|&nbsp; <a href="{% url 'asseci:bureau' %}">Le Bureau</a> 
+        </a>
+        <ul class="dropdown-menu">
+          <li class="link_1"> <a href="{% url 'asseci:missions' %}">Notre Mission</a>
+          <li class="link_2"> <a href="{% url 'asseci:bureau' %}">Le Bureau</a>
+        </ul>
+      </li>
+      <li> <a href="{% url 'asseci:membre' %}">Membres</a>
+      <li role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'asseci:evenement-list' %}" role="button" aria-haspopup="true" aria-expanded="false">
+          Actualites &nbsp;|&nbsp; <a href="{% url 'asseci:evenement-list' %}">Evènements</a> &nbsp;|&nbsp; <a href="{% url 'asseci:annonce-list' %}">Annonces</a> &nbsp;|&nbsp; <a href="{% url 'asseci:timeline' %}">Timeline</a>
+        </a>
+        <ul class="dropdown-menu">
+          <li> <a href="{% url 'asseci:evenement-list' %}">Evènements</a>
+          <li> <a href="{% url 'asseci:annonce-list' %}">Annonces</a>
+          <li> <a href="{% url 'asseci:timeline' %}">Timeline</a>
+        </ul>
+      </li>
+      <li role="presentation" class="dropdown"> 
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          Education
+        </a>
+        <!--ul class="dropdown-menu">
+          <li> <a href="single-post.html">Reseau</a>
+          <li> <a href="single-post-2.html">Developpement</a>
+          <li> <a href="single-post.html">Certifications</a>
+          <li> <a href="single-post-2.html">Base de Données</a>
+          <li> <a href="single-post.html">Systèmes</a>
+          <li> <a href="single-post.html">Bureautique</a>
+          <li> <a href="single-post.html">Gestion de Projet</a>
+          <li> <a href="single-post.html">Insertion Professionnelle</a>
+        </ul-->
+      </li>
+      <li role="presentation" class="dropdown"> 
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          Espace Pro &nbsp;|&nbsp; <a href="#">Forum</a> &nbsp;|&nbsp; <a href="#">Mon Blog</a>
+        </a>
+        <ul class="dropdown-menu">
+          <li> <a href="#">Forum</a>
+          <li> <a href="#">Mon Blog</a>
+          </li>
+        </ul>
+      </li>
+      <li> <a href="#">Contact</a>
+
+    </ul>
+    </div>
+  </nav>
+</article>
+
+
+
+
+<article class="col-md-4">
+  
+  <h1>Menu pied de page</h1>
+  
+  <nav>
+    <div class="widget sitemap">
+      
+      <ul>
+        
+        
+        <li class="link_1"> <a href="{% url 'asseci:mentionslegales' %}"  class="" target="_self">Informations légales</a>
+          
+          
+          
+        
+        <li class="link_2"> <a href="{% url 'asseci:paiement' %}"  class="" target="_self">Sécurité des paiements</a>
+          
+          
+          
+        
+        <li class="link_3"> <a href="{% url 'asseci:plan' %}"  class="actif" target="_self">Plan du site</a>
+          
+          
+          
+        </li>
+      </ul>
+      
+    </div>
+  </nav>
+</article>
+
+
+</div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+<!-- Start Featured Gallery -->
+  <div class="featured-gallery">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-3">
+          <h4>Galerie</h4>
+          <a href="timeline.html" class="btn btn-default btn-lg">Plus</a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img6.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img6.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-video"> <a href="{% static 'asseci/media/382/gallery-img3.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img3.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img4.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img4.jpg' %}" alt=""> </a> </div>
+      </div>
+    </div>
+  </div>
+<!-- End Featured Gallery --> 
+
+
+
+  {% endblock %}
