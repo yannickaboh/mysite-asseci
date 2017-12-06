@@ -18,3 +18,11 @@ def missions(request):
 # Presentation / Bureau
 def bureau(request):
 	return render(request, 'asseci/bureau.html', {})
+
+# Profils & Membres
+def membre(request):
+	return render(request, 'asseci/membre.html', {})
+
+# Profils & Membres / Id
+def membreId(request):
+	return render(request, 'asseci/membreId.html', {})

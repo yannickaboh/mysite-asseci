@@ -13,5 +13,7 @@ urlpatterns = [
     url(r'^presentation/$', views.presentation, name='presentation'),
     url(r'^presentation/le-bureau/$', views.bureau, name='bureau'),
     url(r'^presentation/nos-missions/$', views.missions, name='missions'),
+    url(r'^promotion/id/$', views.membre, name='membre'),
+    url(r'^promotion/membre/id/profil/$', views.membreId, name='membreId'),
 
 ]
