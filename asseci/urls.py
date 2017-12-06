@@ -4,6 +4,11 @@ from asseci import views
 from . import views
 from .views import EvenementListView, EvenementDetailView, AnnonceListView, AnnonceDetailView
 
+
+from accounts import views as accounts_views
+
+from django.contrib.auth import views as auth_views
+
 app_name = 'asseci'
 
 
@@ -25,5 +30,44 @@ urlpatterns = [
     url(r'^mentions-legales/$', views.mentionslegales, name='mentionslegales'),
     url(r'^donation/$', views.paiement, name='paiement'),
     url(r'^plan-du-site/$', views.plan, name='plan'),
+
+    # FORUM
+    url(r'^forum/$', views.forum, name='forum'),
+    url(r'^signup/$', accounts_views.signup, name='signup'),
+    url(r'^settings/account/$', accounts_views.UserUpdateView.as_view(), name='my_account'),
+    url(r'^logout/$', auth_views.LogoutView.as_view(), name='logout'),
+    url(r'^login/$', auth_views.LoginView.as_view(template_name='asseci/login.html'), name='login'),
+    url(r'^themes/(?P<pk>\d+)/$', views.board_topics, name='board_topics'),
+    url(r'^themes/(?P<pk>\d+)/nouveau/$', views.new_topic, name='new_topic'),
+    url(r'^themes/(?P<pk>\d+)/sujets/(?P<topic_pk>\d+)/$', views.topic_posts, name='topic_posts'),
+    url(r'^themes/(?P<pk>\d+)/sujets/(?P<topic_pk>\d+)/repondre/$', views.reply_topic, name='reply_topic'),
+    url(r'^nouveau_post/$', views.NewPostView.as_view(), name='new_post'),
+    url(r'^themes/(?P<pk>\d+)/sujets/(?P<topic_pk>\d+)/commentaires/(?P<post_pk>\d+)/editer/$',
+        views.PostUpdateView.as_view(), name='edit_post'),
+    url(r'^themes/(?P<pk>\d+)/$', views.TopicListView.as_view(), name='board_topics'),
+    url(r'^themes/(?P<pk>\d+)/sujets/(?P<topic_pk>\d+)/$', views.PostListView.as_view(), name='topic_posts'),
+
+
+    url(r'^settings/password/$', auth_views.PasswordChangeView.as_view(template_name='asseci/password_change.html'),
+    name='password_change'),
+    url(r'^settings/password/done/$', auth_views.PasswordChangeDoneView.as_view(template_name='asseci/password_change_done.html'),
+        name='password_change_done'),
+
+    url(r'^reset/$',
+    auth_views.PasswordResetView.as_view(
+        template_name='asseci/password_reset.html',
+        email_template_name='asseci/password_reset_email.html',
+        subject_template_name='asseci/password_reset_subject.txt'
+    ),
+    name='password_reset'),
+    url(r'^reset/done/$',
+        auth_views.PasswordResetDoneView.as_view(template_name='asseci/password_reset_done.html'),
+        name='password_reset_done'),
+    url(r'^reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+        auth_views.PasswordResetConfirmView.as_view(template_name='asseci/password_reset_confirm.html'),
+        name='password_reset_confirm'),
+    url(r'^reset/complete/$',
+        auth_views.PasswordResetCompleteView.as_view(template_name='asseci/password_reset_complete.html'),
+        name='password_reset_complete'),
 
 ]

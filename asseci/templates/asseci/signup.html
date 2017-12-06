@@ -1,0 +1,136 @@
+
+{% extends 'asseci/base.html' %}
+
+
+{% block title %}SIGNUP{% endblock %}
+
+{% block vtitle %}S'INSCRIRE{% endblock %}
+
+
+{% block content %}
+
+{% load staticfiles %}
+
+  <!-- Start Content -->
+  <div class="main" role="main">
+    <div id="content" class="content full">
+      <div class="container">
+        <div class="row"><div class="col-md-9 contenu">
+          
+
+
+ 
+    <header class="single-post-header clearfix">
+      <h2 class="post-title">Nous trouver</h2>
+    </header>
+    <div class="post-content">
+      <div id="gmap">
+        <iframe src="https://www.google.com/maps/"></iframe>
+      </div>
+
+
+
+<article class="multi_form" id="multi_form_7">
+  
+  <header class="post_header">
+    <h1>S'inscrire</h1>
+  </header>
+  
+  
+  <form method="post" novalidate>
+              {% csrf_token %}
+              {% include 'asseci/includes/form.html' %}
+  <input type="submit" name="Submit" value="Envoyer" class="bt_envoyer btn btn-primary btn-lg pull-right" /></p><br style="clear:both">
+    <p class="alerte"> <strong>* champs obligatoires </strong></p>
+    <p> <span style="font-size: 0.8em;">En application de la loi n&deg; 78-17 du 06 janvier 1978 relative &agrave; l'informatique, aux fichiers et aux libert&eacute;s, vous disposez des droits d'opposition (art. 26i), d'acc&egrave;s (art. 34 &agrave; 38) et de rectification (art. 36) des donn&eacute;es le concernant. Pour cela, contactez-nous par mail &agrave; l&rsquo;adresse <a href="mailto:contact@natural-net.fr">contact@h14-net.fr</a> </span> </p>
+
+  </form>
+  
+  
+  <div class="post_footer"></div>
+</article>
+ </div>
+</div>
+          <!-- Start Sidebar -->
+          <div class="col-md-3 sidebar">
+            
+
+            
+<div class="widget-recent-posts widget">
+  
+  <!-- Latest Sermons -->
+    <div class="listing sermons-listing">
+    <header class="listing-header"> 
+      
+      <h3>CONTACTS - ASSECI</h3>
+       
+    </header>
+    <section class="listing-cont">
+    <ul>
+
+      <li class="item sermon">
+        <div class="post-title">
+          <h4><a href="single-post.html">Président CHAKOUR</a></h4>
+          <span class="meta-data"><i class="fa fa-phone"></i> +241 06 68 23 53<br />
+          <span class="meta-data"><i class="fa fa-facebook"></i> ASSECI<br />
+          <span class="meta-data"><i class="fa fa-twitter"></i> @ASSECI/H14<br />
+          <span class="meta-data"><i class="fa fa-google"></i> ASSECI<br />
+          <span class="meta-data"><i class="fa fa-home"></i> Libreville, Campus IAI<br />
+        </div>
+      </li>
+
+      <li class="item sermon">
+        <div class="post-title">
+          <h4><a href="single-post.html">SG FOTSO Didier</a></h4>
+          <span class="meta-data"><i class="fa fa-phone"></i> +241 06 68 23 53<br />
+          <span class="meta-data"><i class="fa fa-facebook"></i> ASSECI<br />
+          <span class="meta-data"><i class="fa fa-twitter"></i> @ASSECI/H14<br />
+          <span class="meta-data"><i class="fa fa-google"></i> ASSECI<br />
+          <span class="meta-data"><i class="fa fa-home"></i> Libreville, Campus IAI<br />
+        </div>
+      </span>
+      </li>
+
+      <li class="item sermon">
+        <div class="post-title">
+          <h4><a href="single-post.html">MINREX Bony</a></h4>
+          <span class="meta-data"><i class="fa fa-phone"></i> +241 06 68 23 53<br />
+          <span class="meta-data"><i class="fa fa-facebook"></i> ASSECI<br />
+          <span class="meta-data"><i class="fa fa-twitter"></i> @ASSECI/H14<br />
+          <span class="meta-data"><i class="fa fa-google"></i> ASSECI<br />
+          <span class="meta-data"><i class="fa fa-home"></i> Libreville, Campus IAI<br />
+        </div>
+      </li>
+      
+    </ul>
+
+    </section>
+    </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+<!-- Start Featured Gallery -->
+  <div class="featured-gallery">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-3">
+          <h4>Galerie</h4>
+          <a href="timeline.html" class="btn btn-default btn-lg">Plus</a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img6.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img6.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-video"> <a href="{% static 'asseci/media/382/gallery-img3.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img3.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img4.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img4.jpg' %}" alt=""> </a> </div>
+      </div>
+    </div>
+  </div>
+<!-- End Featured Gallery --> 
+
+
+
+  {% endblock %}

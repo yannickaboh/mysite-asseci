@@ -1,0 +1,93 @@
+
+{% extends 'asseci/base.html' %}
+
+
+{% block title %}FORUM{% endblock %}
+
+{% block vtitle %}FORUM{% endblock %}
+
+
+{% block content %}
+
+{% load staticfiles %}
+
+  
+  <!-- Start Content -->
+  <div class="main" role="main">
+    <div id="content" class="content full">
+      <div class="container">
+        <div class="row"><div class="col-md-9 contenu">
+
+
+<!-- Events Listing -->
+<div class="listing events-listing">
+  
+  <header class="listing-header">
+    <h2>NOS THEMES</h2>
+  </header>
+  
+  <section class="listing-cont">
+    <ul>
+      {% for board in boards %}
+      <li class="item event-item">
+     
+        <div class="event-detail">
+         <h4><a href="{% url 'asseci:board_topics' board.pk %}">{{ board.name }}</a></h4>
+         <small class="text-muted d-block">{{ board.description }}</small>
+          <h6 class="text-muted d-block"><em>Sujets</em> | <span class="badge">&nbsp;{{ board.topics.count }}&nbsp;</span></h6>
+          <h6 class="text-muted d-block"><em>Commentaires</em> | <span class="badge">&nbsp;{{ board.get_posts_count }}&nbsp;</span></h6>
+          <h6 class="text-muted d-block"><em>Dernier Commentaire</em> |
+            {% with post=board.get_last_post %}
+              {% if post %}
+                <small>
+                  <a href="{% url 'asseci:topic_posts' board.pk post.topic.pk %}">
+                    Par {{ post.created_by.username }} à {{ post.created_at }}
+                  </a>
+                </small>
+              {% else %}
+                <small class="text-muted">
+                  <em>Aucun commentaire pour le moment.</em>
+                </small>
+              {% endif %}
+            {% endwith %} 
+          </span></h6> </div>
+      </li>
+      {% endfor %}
+      
+    </ul>
+  </section>
+</div>
+          
+
+<div class="spacer-30"></div>
+</div>
+          <!-- Start Sidebar -->
+          <div class="col-md-3 sidebar">
+            
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+<!-- Start Featured Gallery -->
+  <div class="featured-gallery">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-3">
+          <h4>Galerie</h4>
+          <a href="timeline.html" class="btn btn-default btn-lg">Plus</a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img6.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img6.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-video"> <a href="{% static 'asseci/media/382/gallery-img3.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img3.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img4.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img4.jpg' %}" alt=""> </a> </div>
+      </div>
+    </div>
+  </div>
+<!-- End Featured Gallery --> 
+
+
+
+  {% endblock %}

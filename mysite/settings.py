@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',  # <- here
+
+    'widget_tweaks',
+
+    'accounts',
 
     'asseci',
 ]
@@ -123,3 +128,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static/asseci'),
 )
+
+LOGOUT_REDIRECT_URL = 'asseci:login'
+LOGIN_REDIRECT_URL = 'asseci:accueil'
+LOGIN_URL = 'asseci:login'

@@ -1,0 +1,85 @@
+
+{% extends 'asseci/base.html' %}
+
+
+{% block title %}FORUM - SUJETS{% endblock %}
+
+{% block vtitle %}FORUM / SUJETS{% endblock %}
+
+
+{% block content %}
+
+{% load staticfiles %}
+
+  <!-- Start Content -->
+  <div class="main" role="main">
+    <div id="content" class="content full">
+      <div class="container">
+        <div class="row"><div class="col-md-9 contenu">
+  <div class="mb-4">
+    <a href="{% url 'asseci:new_topic' board.pk %}" class="btn btn-primary">Nouveau Sujet</a>
+  </div><br />
+
+
+<!-- Events Listing -->
+<div class="listing events-listing">
+  
+  <header class="listing-header">
+    <h2>Nos Sujets</h2>
+  </header>
+  
+  <section class="listing-cont">
+    <ul>
+      {% for topic in topics %}
+      {% load humanize %}
+      <li class="item event-item">
+     
+        <div class="event-detail">
+         <h4><a href="{% url 'asseci:topic_posts' board.pk topic.pk %}">{{ topic.subject }}</a></h4>
+          <h6 class="text-muted d-block"><em>Auteur</em> | <span class="badge">&nbsp;{{ topic.starter.username }}&nbsp;</span></h6>
+          <h6 class="text-muted d-block"><em>Réponses</em> | <span class="badge">&nbsp;{{ topic.replies }}&nbsp;</span></h6>
+          <h6 class="text-muted d-block"><em>Vues</em> | <span class="badge">&nbsp;{{ topic.views }}&nbsp;</span></h6> 
+          <h6 class="text-muted d-block"><em>Dernière mise à jour</em> | <span class="badge">&nbsp;{{ topic.last_updated|naturaltime }}&nbsp;</span></h6> </div>
+      </li>
+      {% endfor %}
+      
+    </ul>
+  </section>
+</div>
+
+
+<br><br>
+
+<div class="spacer-30"></div>
+</div>
+          <!-- Start Sidebar -->
+          <div class="col-md-3 sidebar">
+            
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  
+
+
+<!-- Start Featured Gallery -->
+  <div class="featured-gallery">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-3">
+          <h4>Galerie</h4>
+          <a href="timeline.html" class="btn btn-default btn-lg">Plus</a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img6.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img6.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-video"> <a href="{% static 'asseci/media/382/gallery-img3.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img3.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img4.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img4.jpg' %}" alt=""> </a> </div>
+      </div>
+    </div>
+  </div>
+<!-- End Featured Gallery --> 
+
+
+
+  {% endblock %}

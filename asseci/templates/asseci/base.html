@@ -66,12 +66,12 @@
 <ul class="top-navigation hidden-sm hidden-xs">
 
           {% if user.is_authenticated %}
-            <li><!--a href=":signup' %}"-->{{ user.username }}</a></li>
-            <li><a href="#">Déconnexion</a></li>
+            <li><a>{{ user.username }}</a></li>
+            <li><a href="{% url 'asseci:logout' %}">Déconnexion</a></li>
           {% else %}
             <form class="form-inline ml-auto">
-              <li><a href="#">S'inscrire</a></li>
-              <li><a href="#">Se connecter</a></li>
+              <li><a href="{% url 'asseci:signup' %}">S'inscrire</a></li>
+              <li><a href="{% url 'asseci:login' %}">Se connecter</a></li>
             </form>
           {% endif %}
   
@@ -130,12 +130,12 @@
       </ul-->
     </li>
     <li role="presentation" class="dropdown"> 
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'asseci:forum' %}" role="button" aria-haspopup="true" aria-expanded="false">
         Espace Pro
       </a>
       <ul class="dropdown-menu">
-        <li> <a href="#">Forum</a>
-        <li> <a href="#">Mon Blog</a>
+        <li> <a href="{% url 'asseci:forum' %}">Forum</a>
+        <!--li> <a href="#">Mon Blog</a-->
         </li>
       </ul>
     </li>

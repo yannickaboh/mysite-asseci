@@ -1,0 +1,125 @@
+
+{% extends 'asseci/base.html' %}
+
+
+{% block title %}FORUM - POSTS{% endblock %}
+
+{% block vtitle %}FORUM / COMMENTAIRES{% endblock %}
+
+
+{% block content %}
+
+{% load staticfiles %}
+
+  
+ <!-- Start Content -->
+  <div class="main" role="main">
+    <div id="content" class="content full">
+      <div class="container">
+        <div class="row"><div class="col-md-9 contenu">
+          
+ 
+<header class="single-post-header clearfix">
+  <div class="pull-right post-comments-count"> <a href="#commentaires"><i class="fa fa-comment"></i> </a> </div>
+  <h2 class="post-title">{{ topic.board.name }}</h2>
+</header>
+<article class="post-content"> <span class="post-meta meta-data"><span><i class="fa fa-calendar"></i> 20 juil 2015 <span><i class="fa fa-archive"></i> Catégories : <a href="../../../Generale/index.html">Générale</a></span></span></span>
+  <div class="featured-image"> <img src="../../../../theme/fr/images/img.png" alt="" style="background: url(../../../../media/372.jpg) no-repeat;background-size: 100%;  background-position: center;"> </div>
+
+<h3>
+    {{ topic.subject }}</h3>
+<br />
+
+<section class="post-comments" id="comments">
+  <h3><i class="fa fa-comment"></i> Commentaires</h3>
+  <ol class="comments">
+
+
+    {% for post in topic.posts.all %}
+    <li>
+      <div class="post-comment-block">
+        <div class="img-thumbnail" style="width: 8%;!important"> <img src="{% static 'asseci/img/avatar02.jpg' %}" alt="avatar"> </div>
+        
+        <h5>{{ post.created_by.username }}</h5>
+        
+        <span class="meta-data">{{ post.created_at }}</span>
+        <p>{{ post.get_message_as_markdown }}</p><br>
+
+        {% if post.created_by == user %}
+        <a href="{% url 'asseci:edit_post' post.topic.board.pk post.topic.pk post.pk %}" class="btn btn-primary" role="button">Editer</a><br>
+        {% endif %}
+      </div>
+    </li>{% endfor %}<br>
+    
+      
+  </ol>
+</section>
+
+<section class="post-comment-form">
+  
+  <h3><i class="fa fa-share"></i> Ajouter votre commentaire</h3>
+  
+  
+  
+  <form method="post" action="#comments">
+    {% csrf_token %}
+    <div class="row">
+      <div class="form-group">
+        <div class="col-md-12">
+      <textarea name="message" id="message" cols="8" rows="4" class="form-control input-lg" placeholder="Votre commentaire"></textarea>
+       </div>
+      </div>
+    </div>
+    
+    <div class="row">
+
+      <div class="form-group">
+        <div class="col-md-12">
+      <input type="submit" name="Submit" value="Poster" class="bt_post btn btn-primary btn-lg" title="Poster le commentaire" />
+    </div>
+      </div>
+    </div>
+  </form>
+  
+  
+  
+  
+</section>
+ 
+</div>
+          <!-- Start Sidebar -->
+          <div class="col-md-3 sidebar">
+            
+
+            
+<div class="widget sidebar-widget">
+  
+  
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+
+<!-- Start Featured Gallery -->
+  <div class="featured-gallery">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-3">
+          <h4>Galerie</h4>
+          <a href="timeline.html" class="btn btn-default btn-lg">Plus</a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img6.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img6.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-video"> <a href="{% static 'asseci/media/382/gallery-img3.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img3.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img4.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img4.jpg' %}" alt=""> </a> </div>
+      </div>
+    </div>
+  </div>
+<!-- End Featured Gallery --> 
+
+
+
+  {% endblock %}
