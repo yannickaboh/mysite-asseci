@@ -1,0 +1,99 @@
+
+{% extends 'asseci/base.html' %}
+
+
+{% block title %}ANNONCES{% endblock %}
+
+{% block vtitle %}ANNONCES{% endblock %}
+
+
+{% block content %}
+
+{% load staticfiles %}
+
+  <!-- Start Content -->
+  <!-- Start Content -->
+  <div class="main" role="main">
+    <div id="content" class="content full">
+      <div class="container">
+        <div class="row"><div class="col-md-9 contenu">
+          
+
+<!-- Events Listing -->
+<div class="listing events-listing">
+  
+  <header class="listing-header">
+    <h2>Nos annonces</h2>
+  </header>
+  
+  <section class="listing-cont">
+    <ul>
+      
+      {% for annonce in annonces %}
+      <li class="item event-item">
+     
+        <div class="event-detail">
+         <h4><a href="single-post.html">{{ annonce.titre }}</a></h4>
+          <span class="event-dayntime meta-data">{{ annonce.annonce }}</span> 
+          <span class="event-dayntime meta-data">{{ annonce.jour }} | {{ annonce.dateCreation }}</span> </div>
+        <div class="to-event-url">
+     <div><br /><br /><a href="{% url 'asseci:annonce-detail' annonce.id %}" class="btn btn-default btn-sm">+ d'infos</a></div> 
+        </div>
+      </li>
+      {% endfor %}
+      
+      
+    </ul>
+  </section>
+</div>
+<div class="spacer-30"></div>
+<div class="spacer-30"></div>
+</div>
+
+          <!-- Start Sidebar -->
+          <div class="col-md-3 sidebar">
+            
+<div class="widget sidebar-widget">
+  
+  <div class="sidebar-widget-title">
+    <h3><i class="fa fa-gears"></i> &nbsp;Options</h3>
+  </div>
+  
+  <ul>
+    
+      <li><i class="fa fa-search"></i> &nbsp;&nbsp;<a href="#" class="actif">Recherche</a></li>
+
+      <li><i class="fa fa-send"></i> &nbsp;&nbsp;<a href="#" class="actif">Mes annonces</a></li>
+      
+      <li><i class="fa fa-edit"></i> &nbsp;&nbsp;<a href="#" class="">Publier</a></li>
+      
+      
+  </ul>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  
+
+
+<!-- Start Featured Gallery -->
+  <div class="featured-gallery">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-3">
+          <h4>Galerie</h4>
+          <a href="timeline.html" class="btn btn-default btn-lg">Plus</a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img6.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img6.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-video"> <a href="{% static 'asseci/media/382/gallery-img3.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img3.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img4.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img4.jpg' %}" alt=""> </a> </div>
+      </div>
+    </div>
+  </div>
+<!-- End Featured Gallery --> 
+
+
+
+  {% endblock %}

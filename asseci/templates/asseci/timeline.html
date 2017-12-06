@@ -1,0 +1,91 @@
+
+{% extends 'asseci/base.html' %}
+
+
+{% block title %}TIMELINE{% endblock %}
+
+{% block vtitle %}TIMELINE{% endblock %}
+
+
+{% block content %}
+
+{% load staticfiles %}
+
+  <div class="main" role="main">
+    <div id="content" class="content full">
+      <div class="container">
+        <div class="row"><div class="col-md-12 contenu">
+
+<div class="main" role="main">
+    <div id="content" class="content full">
+      <div class="container">
+        <ul class="timeline">
+          {% for evenement in evenement %}
+            <li class="Billet a gauche">
+              <div class="timeline-badge">{{ evenement.mois }}<span>{{ evenement.annee }}</span></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h3 class="timeline-title"><a href="single-post.html">{{ evenement.evenement }}</a></h3>
+                </div>
+                <div class="timeline-body">
+                    <ul class="info-table">
+                      <li><i class="fa fa-calendar"></i> <strong>{{ evenement.jour }}</strong> | {{ evenement.dateCreation }}</li>
+                      <li><i class="fa fa-clock-o"></i> {{ evenement.heure }}</li>
+                      <li><i class="fa fa-map-marker"></i> {{ evenement.lieu }}</li>
+                      <li><i class="fa fa-phone"></i> {{ evenement.contact }}</li>
+                    </ul>
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+
+          {% for annonce in annonces %} 
+            <li class="timeline-inverted">
+              <div class="timeline-badge">{{ annonce.mois }}<span>{{ annonce.annee }}</span></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h3 class="timeline-title"><a href="single-post.html">{{ annonce.titre }}</a></h3>
+                </div>
+                <div class="timeline-body">
+                    <ul class="info-table">
+                      <li><i class="fa fa-calendar"></i> <strong>{{ annonce.jour }}</strong> | {{ annonce.dateCreation }}</li>
+                      <!--li><i class="fa fa-clock-o"></i> 12h37</li-->
+                      <li><i class="fa fa-map-marker"></i> {{ annonce.lieu }}</li>
+                      <li><i class="fa fa-phone"></i> {{ annonce.contact }}</li>
+                      <li><i class="fa fa-send"></i> <a>{{ annonce.email }}</li>
+                    </ul>
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+            
+        </ul>
+      </div>
+    </div>
+  </div>
+
+        </div> </div>
+        </div>
+      </div>
+    </div>
+  
+
+
+<!-- Start Featured Gallery -->
+  <div class="featured-gallery">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-3">
+          <h4>Galerie</h4>
+          <a href="timeline.html" class="btn btn-default btn-lg">Plus</a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img6.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img6.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-video"> <a href="{% static 'asseci/media/382/gallery-img3.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img3.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img4.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img4.jpg' %}" alt=""> </a> </div>
+      </div>
+    </div>
+  </div>
+<!-- End Featured Gallery --> 
+
+
+
+  {% endblock %}

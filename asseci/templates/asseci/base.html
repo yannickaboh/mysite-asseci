@@ -105,13 +105,13 @@
     </li>
     <li> <a href="{% url 'asseci:membre' %}">Membres</a>
     <li role="presentation" class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'asseci:evenement-list' %}" role="button" aria-haspopup="true" aria-expanded="false">
         Actualites
       </a>
       <ul class="dropdown-menu">
-        <li> <a href="#">Evènements</a>
-        <li> <a href="#">Annonces</a>
-        <li> <a href="#">Timeline</a>
+        <li> <a href="{% url 'asseci:evenement-list' %}">Evènements</a>
+        <li> <a href="{% url 'asseci:annonce-list' %}">Annonces</a>
+        <li> <a href="{% url 'asseci:timeline' %}">Timeline</a>
       </ul>
     </li>
     <li role="presentation" class="dropdown"> 
