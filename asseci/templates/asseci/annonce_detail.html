@@ -22,7 +22,7 @@
  
 <header class="single-post-header clearfix">
   <nav class="btn-toolbar pull-right"> </nav>
-  <h2 class="post-title">{{ object.evenement }}</h2>
+  <h2 class="post-title">{{ object.titre }}</h2>
 </header>
 <article class="post-content">
   <div class="event-description"> <!--img src="media/412/event-img2.jpg" class="img-responsive"-->
@@ -45,31 +45,19 @@
       </div>
       <div class="col-md-4">
         <ul class="list-group">
-          <li class="list-group-item"> <span class="badge">{{ object.nbreParticipants }}</span> Participants </li>
-          <li class="list-group-item"> <span class="badge">{{ object.bureau }}</span> Équipe </li>
+          <li class="list-group-item"> <span class="badge">{{ object.email }}</span> </li>
+          <li class="list-group-item"> <span class="badge">{{ object.annonce }}</span> </li>
         </ul>
       </div>
     </div>
     <br />
 
       <h4>
-        Ordre du Jour</h4>
+        Annonce</h4>
       <br />
       <ol>
         <li>
-          {{ object.odd1 }}
-        </li>
-        <li>
-          {{ object.odd2 }}
-        </li>
-        <li>
-          {{ object.odd3 }}
-        </li>
-        <li>
-          {{ object.odd4 }}
-        </li>
-        <li>
-          {{ object.odd5 }}
+          {{ object.annonce }}
         </li>
       </ol>
 
@@ -79,9 +67,6 @@
 
 
         <br />
-      <h4>
-        RAPPORT</h4>
-      {{ object.resume }}<br />
       <br />
       <br />
 
