@@ -147,3 +147,28 @@ class Commentaires(models.Model):
 
 
 
+class ContactezNous(models.Model):
+    CIVILITE  =  ( 
+        ('Mr', 'Monsieur'),
+        ('Mme', 'Madame'),
+    )
+    VOUSETES  =  ( 
+        ('Particulier', 'Particulier'),
+        ('Entreprise', 'Entreprise'),
+    )
+    civilite = models.CharField(max_length=30, verbose_name="Civilité", choices=CIVILITE, default='Monsieur')
+    vousetes = models.CharField(max_length=30, verbose_name="Vous êtes", choices=VOUSETES, default='Particulier')
+    nom = models.CharField(max_length=250, blank=True, null=True, verbose_name="Nom")
+    email = models.CharField(max_length=250, blank=True, null=True, verbose_name="Adresse Email")
+    phone = models.CharField(max_length=250, blank=True, null=True, verbose_name="Téléphone")
+    message = models.TextField(max_length=4000, blank=True, null=True, verbose_name="Message")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.vousetes
+
+    class Meta:
+        verbose_name_plural = 'Contacts'
+
+
+

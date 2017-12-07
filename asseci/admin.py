@@ -17,3 +17,4 @@ admin.site.register(models.Commentaires, )
 
 admin.site.register(models.Board, )
 admin.site.register(models.Topic, )
+admin.site.register(models.ContactezNous, )

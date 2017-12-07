@@ -21,13 +21,13 @@
 <div class="row"> 
   <!-- Start Featured Blocks -->
   <div class="featured-blocks clearfix">
-    <div class="col-md-4 col-sm-4 featured-block"> <a href="societe-notre-equipe.html" class="img-thumbnail"> 
+    <div class="col-md-4 col-sm-4 featured-block"> <a href="{% url 'asseci:bureau' %}" class="img-thumbnail"> 
     <img src="{% static 'asseci/media/362/staff3.jpg' %}" alt="staff"> 
     <strong>Le Bureau</strong> <span class="more">Plus</span> </a> </div>
-    <div class="col-md-4 col-sm-4 featured-block"> <a href="societe-notre-equipe.html" class="img-thumbnail"> 
+    <div class="col-md-4 col-sm-4 featured-block"> <a href="{% url 'asseci:membre' %}" class="img-thumbnail"> 
     <img src="{% static 'asseci/media/362/staff11.jpg' %}" alt="staff"> 
     <strong>Les Membres</strong> <span class="more">Plus</span> </a> </div>
-    <div class="col-md-4 col-sm-4 featured-block"> <a href="societe-nos-services.html" class="img-thumbnail"> 
+    <div class="col-md-4 col-sm-4 featured-block"> <a href="{% url 'asseci:evenement-list' %}" class="img-thumbnail"> 
     <img src="{% static 'asseci/media/362/staff1.jpg' %}" alt="staff"> 
     <strong>Nos actualités</strong> <span class="more">Plus</span> </a> </div>
   </div>
@@ -48,17 +48,19 @@
   <section class="listing-cont">
     <ul>
       
+      {% for evenement in events %}
       <li class="item event-item">
      
         <div class="event-detail">
-         <h4><a href="single-post.html">Visite du Répresentant Résident de l'IAI Cameroun</a></h4> 
-          <span class="event-dayntime meta-data">6 Mars 2018 | 11h15</span> </div>
+         <h4><a>{{ evenement.evenement }}</a></h4> 
+          <span class="event-dayntime meta-data">{{ evenement.dateCreation }} | {{ evenement.heure }}</span> </div>
         <div class="to-event-url">
-     <div><a href="single-post.html" class="btn btn-default btn-sm">+ d'infos</a></div> 
+     <div><a href="{% url 'asseci:evenement-detail' evenement.id %}" class="btn btn-default btn-sm">+ d'infos</a></div> 
         </div>
       </li>
+      {% endfor %}
       
-      <li class="item event-item">
+      <!--li class="item event-item">
      
         <div class="event-detail">
          <h4><a href="single-post-2.html">Rencontre avec le Parrain STEVE</a></h4> 
@@ -66,7 +68,7 @@
         <div class="to-event-url">
      <div><a href="single-post-2.html" class="btn btn-default btn-sm">+ d'infos</a></div> 
         </div>
-      </li>
+      </li-->
       
     </ul>
   </section>

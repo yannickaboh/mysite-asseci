@@ -1,0 +1,74 @@
+
+{% extends 'asseci/base.html' %}
+
+
+{% block title %}MON COMPTE{% endblock %}
+
+{% block vtitle %}MON COMPTE{% endblock %}
+
+
+{% block content %}
+
+{% load staticfiles %}
+
+  <!-- Start content -->
+  <div class="main" role="main">
+    <div id="content" class="content full">
+      <div class="container">
+        <div class="row"><div class="col-md-12 contenu">
+
+<div id="content" class="content full">
+      <div class="container" style="  padding-bottom: 50px;">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+  <div class="col-md-6">
+    <h2 class="post-title">Mon Compte </h2>
+    <article class="post-content cause-item">
+            <form method="post" novalidate>
+              {% csrf_token %}
+              {% include 'asseci/includes/form.html' %}
+              <button type="submit" class="btn btn-success">Save changes</button>
+            </form>
+          </article>
+  </div>
+  <div class="col-md-6">
+    <h2 class="post-title">Vous &ecirc;tes nouveau  ? </h2>
+    <article class="post-content cause-item">
+    <p>En cr&eacute;ant un compte sur <strong>ASSECI </strong> vous pourrez acc&eacute;der &agrave; l'ensemble de nos services.</p>
+    <br />
+      <p>
+        <a href="{% url 'asseci:signup' %}"><input type="submit" value="Créez votre compte" class="bouton btn btn-primary" title="Créez votre compte"/></a>
+      </p>
+  </article>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+        </div> </div>
+        </div>
+      </div>
+    </div>
+  
+
+
+<!-- Start Featured Gallery -->
+  <div class="featured-gallery">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-3">
+          <h4>Galerie</h4>
+          <a href="timeline.html" class="btn btn-default btn-lg">Plus</a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img6.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img6.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-video"> <a href="{% static 'asseci/media/382/gallery-img3.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img3.jpg' %}" alt=""> </a> </div>
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="{% static 'asseci/media/382/gallery-img4.jpg' %}" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="{% static 'asseci/media/382/gallery-img4.jpg' %}" alt=""> </a> </div>
+      </div>
+    </div>
+  </div>
+<!-- End Featured Gallery --> 
+
+
+
+  {% endblock %}

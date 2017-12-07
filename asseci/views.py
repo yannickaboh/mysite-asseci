@@ -34,17 +34,21 @@ import re
 from django.db.models import Q
 from django.template.loader import render_to_string
 
-from .models import Evenement, Annonce, ThemeForum, Board, Topic, Post
+from .models import Evenement, Annonce, ThemeForum, Board, Topic, Post, ContactezNous
 
 from django.contrib.auth.models import User
-from .forms import PostForm
+from .forms import PostForm, ContactezNousForm
+
+from django.contrib import messages
 
 # Create your views here.
 
 
 # Accueil
 def accueil(request):
-    return render(request, 'asseci/accueil.html', {})
+	events = Evenement.objects.all().order_by('evenement')[:2]
+	success_url = reverse_lazy('asseci:evenement_detail')
+	return render(request, 'asseci/accueil.html', {'events': events})
 
 # Presentation
 def presentation(request):
@@ -62,6 +66,10 @@ def bureau(request):
 def membre(request):
 	return render(request, 'asseci/membre.html', {})
 
+# Profils & Membres
+def membre2(request):
+	return render(request, 'asseci/membre2.html', {})
+
 # Profils & Membres / Id
 def membreId(request):
 	return render(request, 'asseci/membreId.html', {})
@@ -78,14 +86,39 @@ def paiement(request):
 def plan(request):
 	return render(request, 'asseci/plan.html', {})
 
+# Contact
+def contact(request):
+	return render(request, 'asseci/contact.html', {})
+
+# ContactezNous
+def ContactezNous(request):
+    if request.method == 'POST':
+        form = ContactezNousForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Votre requête a été transmis avec succes, merci de nous avoir contacter, une réponse vous sera envoyer par courriel.')
+            return redirect('asseci:contacteznous')
+    else:
+        form = ContactezNousForm()
+    return render(request, 'asseci/contacteznous.html', {'form': form, })
+
+
+
 # Evenements
 class EvenementListView(ListView):
 
     model = Evenement
+    template_name = 'asseci/evenement_list.html'
+    context_object_name = 'object_list'
+    paginate_by = 10
+    queryset = Evenement.objects.all()
 
-    def get_context_data(self, **kwargs):
-        context = super(EvenementListView, self).get_context_data(**kwargs)
-        return context
+    #evenement_list = Evenement.objects.all()
+    #paginator = Paginator(evenement_list, 1)
+
+    #def get_context_data(self, **kwargs):
+        #context = super(EvenementListView, self).get_context_data(**kwargs)
+        #return context
 
 # Evenement DetailView
 class EvenementDetailView(DetailView):
@@ -100,11 +133,18 @@ class EvenementDetailView(DetailView):
 # Annonce List View
 class AnnonceListView(ListView):
 
-    model = Annonce
+	model = Annonce
+	template_name = 'asseci/annonce_list.html'
+	context_object_name = 'object_list'
+	paginate_by = 10
+	queryset = Annonce.objects.all()
 
-    def get_context_data(self, **kwargs):
-        context = super(AnnonceListView, self).get_context_data(**kwargs)
-        return context
+
+    #model = Annonce
+
+    #def get_context_data(self, **kwargs):
+        #context = super(AnnonceListView, self).get_context_data(**kwargs)
+        #return context
 
 # Annonce DetailView
 class AnnonceDetailView(DetailView):
@@ -127,6 +167,18 @@ def timeline(request):
 def forum(request):
     boards = Board.objects.all()
     return render(request, 'asseci/forum.html', {'boards': boards})
+
+# FORUM List View
+class ForumListView(ListView):
+
+	model = Board
+	template_name = 'asseci/forum.html'
+	context_object_name = 'boards'
+	paginate_by = 1
+	queryset = Board.objects.all()
+
+
+
 
 def board_topics(request, pk):
     board = get_object_or_404(Board, pk=pk)
@@ -233,7 +285,7 @@ class TopicListView(ListView):
     model = Topic
     context_object_name = 'topics'
     template_name = 'asseci/topics.html'
-    paginate_by = 3
+    paginate_by = 2
 
     def get_context_data(self, **kwargs):
         kwargs['board'] = self.board

@@ -2,9 +2,9 @@
 {% extends 'asseci/base.html' %}
 
 
-{% block title %}SIGNUP{% endblock %}
+{% block title %}CONTACTEZ-NOUS{% endblock %}
 
-{% block vtitle %}S'INSCRIRE{% endblock %}
+{% block vtitle %}CONTACTEZ-NOUS{% endblock %}
 
 
 {% block content %}
@@ -21,25 +21,32 @@
 
  
     <header class="single-post-header clearfix">
-      <h2 class="post-title">S'inscrire</h2>
+      <h2 class="post-title">Nous trouver</h2>
     </header>
     <div class="post-content">
-      <!--div id="gmap">
+      <div id="gmap">
         <iframe src="https://www.google.ga/maps/@0.3696318,9.4805472,16z?hl=fr"></iframe>
-      </div-->
+      </div>
 
 
 
 <article class="multi_form" id="multi_form_7">
   
   <header class="post_header">
-    <h1>Formulaire d'inscription</h1>
+    <h1>Nous Contactez svp!!!</h1>
   </header>
+
+  <div class="row">
+    <div class="col-md-12 alert alert-danger">
+      <p class="thumbnail">Merci de nous avoir contacter, nous répondrons à vos doléances par courriel.</p>
+    </div>
+  </div>
+  
   
   
   <form method="post" novalidate>
-    {% csrf_token %}
-    {% include 'asseci/includes/form.html' %}
+              {% csrf_token %}
+              {% include 'asseci/includes/form.html' %}
   <input type="submit" name="Submit" value="Envoyer" class="bt_envoyer btn btn-primary btn-lg pull-right" /></p><br style="clear:both">
     <p class="alerte"> <strong>* champs obligatoires </strong></p>
     <p> <span style="font-size: 0.8em;">En application de la loi n&deg; 78-17 du 06 janvier 1978 relative &agrave; l'informatique, aux fichiers et aux libert&eacute;s, vous disposez des droits d'opposition (art. 26i), d'acc&egrave;s (art. 34 &agrave; 38) et de rectification (art. 36) des donn&eacute;es le concernant. Pour cela, contactez-nous par mail &agrave; l&rsquo;adresse <a href="mailto:contact@natural-net.fr">contact@h14-net.fr</a> </span> </p>

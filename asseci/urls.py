@@ -2,7 +2,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from asseci import views
 from . import views
-from .views import EvenementListView, EvenementDetailView, AnnonceListView, AnnonceDetailView
+from .views import EvenementListView, EvenementDetailView, AnnonceListView, AnnonceDetailView, ForumListView
 
 
 from accounts import views as accounts_views
@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^presentation/le-bureau/$', views.bureau, name='bureau'),
     url(r'^presentation/nos-missions/$', views.missions, name='missions'),
     url(r'^promotion/id/$', views.membre, name='membre'),
+    url(r'^promotion/id/2/$', views.membre2, name='membre2'),
     url(r'^promotion/membre/id/profil/$', views.membreId, name='membreId'),
     url(r'^actualites/evenement_list/$', EvenementListView.as_view(), name='evenement-list'),
     url(r'^actualites/evenement/(?P<pk>\d+)/$', EvenementDetailView.as_view(), name='evenement-detail'),
@@ -30,14 +31,17 @@ urlpatterns = [
     url(r'^mentions-legales/$', views.mentionslegales, name='mentionslegales'),
     url(r'^donation/$', views.paiement, name='paiement'),
     url(r'^plan-du-site/$', views.plan, name='plan'),
+    url(r'^contact/$', views.contact, name='contact'),
+    url(r'^contacts/formulaire/$', views.ContactezNous, name='contacteznous'),
 
     # FORUM
-    url(r'^forum/$', views.forum, name='forum'),
-    url(r'^signup/$', accounts_views.signup, name='signup'),
+    #url(r'^forum/$', views.forum, name='forum'),
+    url(r'^forum/themes/$', views.ForumListView.as_view(), name='forum'),
+    url(r'^inscription/$', accounts_views.signup, name='signup'),
     url(r'^settings/account/$', accounts_views.UserUpdateView.as_view(), name='my_account'),
     url(r'^logout/$', auth_views.LogoutView.as_view(), name='logout'),
     url(r'^login/$', auth_views.LoginView.as_view(template_name='asseci/login.html'), name='login'),
-    url(r'^themes/(?P<pk>\d+)/$', views.board_topics, name='board_topics'),
+    #url(r'^themes/(?P<pk>\d+)/$', views.board_topics, name='board_topics'),
     url(r'^themes/(?P<pk>\d+)/nouveau/$', views.new_topic, name='new_topic'),
     url(r'^themes/(?P<pk>\d+)/sujets/(?P<topic_pk>\d+)/$', views.topic_posts, name='topic_posts'),
     url(r'^themes/(?P<pk>\d+)/sujets/(?P<topic_pk>\d+)/repondre/$', views.reply_topic, name='reply_topic'),

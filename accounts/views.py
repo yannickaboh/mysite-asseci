@@ -20,7 +20,7 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             auth_login(request, user)
-            return redirect('asseci:home')
+            return redirect('asseci:accueil')
     else:
         form = SignUpForm()
     return render(request, 'asseci/signup.html', {'form': form})
