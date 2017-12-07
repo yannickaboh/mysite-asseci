@@ -110,7 +110,7 @@ class EvenementListView(ListView):
     model = Evenement
     template_name = 'asseci/evenement_list.html'
     context_object_name = 'object_list'
-    paginate_by = 10
+    paginate_by = 5
     queryset = Evenement.objects.all()
 
     #evenement_list = Evenement.objects.all()
@@ -136,7 +136,7 @@ class AnnonceListView(ListView):
 	model = Annonce
 	template_name = 'asseci/annonce_list.html'
 	context_object_name = 'object_list'
-	paginate_by = 10
+	paginate_by = 5
 	queryset = Annonce.objects.all()
 
 
@@ -174,7 +174,7 @@ class ForumListView(ListView):
 	model = Board
 	template_name = 'asseci/forum.html'
 	context_object_name = 'boards'
-	paginate_by = 1
+	paginate_by = 5
 	queryset = Board.objects.all()
 
 
@@ -285,7 +285,7 @@ class TopicListView(ListView):
     model = Topic
     context_object_name = 'topics'
     template_name = 'asseci/topics.html'
-    paginate_by = 2
+    paginate_by = 5
 
     def get_context_data(self, **kwargs):
         kwargs['board'] = self.board
