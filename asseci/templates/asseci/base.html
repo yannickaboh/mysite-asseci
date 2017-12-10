@@ -39,6 +39,14 @@
   ================================================== -->
 <script src="{% static 'asseci/theme/fr/js/modernizr.js' %}"></script><!-- Modernizr -->
 <!-- Charge les feuilles de styles des Widgets et des modules -->
+<script src="text/javascript">
+  $("#dropdownMenu1").click(function() {
+    
+  $("#dropdownMenu1").removeClass("active");
+  $(this).parent().addClass("active");
+    
+    return false;
+</script>
 
 <!-- Charges les scripts des Options avancées du Back-office -->
 
@@ -66,7 +74,7 @@
 <ul class="top-navigation hidden-sm hidden-xs">
 
           {% if user.is_authenticated %}
-            <li>bienvenue, <a>{{ user.username }}</a></li>
+            <li>bienvenue, <a href="{% url 'asseci:dashboard' %}">{{ user.username }}</a></li>
             <li><a href="{% url 'asseci:logout' %}">Déconnexion</a></li>
           {% else %}
             <form class="form-inline ml-auto">
@@ -79,7 +87,21 @@
   
     
   </ul>
-  <a href="#" class="visible-sm visible-xs menu-toggle"><i class="fa fa-bars"></i></a> 
+  <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle visible-sm visible-xs menu-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <i class="fa fa-bars"></i>
+    <span class="caret"></span>
+  </button>
+  <!--a href="#" class="visible-sm visible-xs menu-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-bars"></i></a-->
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+   
 </div>
 
         </div>

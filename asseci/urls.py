@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^donation/$', views.paiement, name='paiement'),
     url(r'^plan-du-site/$', views.plan, name='plan'),
     url(r'^contact/$', views.contact, name='contact'),
+    url(r'^tableau-de-bord/$', views.dashboard, name='dashboard'),
     url(r'^contacts/formulaire/$', views.ContactezNous, name='contacteznous'),
 
     # FORUM

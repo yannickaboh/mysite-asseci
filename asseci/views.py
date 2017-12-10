@@ -90,6 +90,10 @@ def plan(request):
 def contact(request):
 	return render(request, 'asseci/contact.html', {})
 
+# Tableau de Bord
+def dashboard(request):
+    return render(request, 'asseci/dashboard.html', {})
+
 # ContactezNous
 def ContactezNous(request):
     if request.method == 'POST':
