@@ -34,7 +34,7 @@ urlpatterns = [
     url(r'^contact/$', views.contact, name='contact'),
     
     url(r'^tableau-de-bord/$', views.dashboard, name='dashboard'),
-    url(r'^tableau-de-bord/infos-persos/$', accounts_views.UserUpdateView.as_view(), name='my_account'),
+    url(r'^tableau-de-bord/infos-personnelles/$', accounts_views.UserUpdateView.as_view(), name='my_account'),
     url(r'^tableau-de-bord/changer-mot-de-passe/$', accounts_views.change_password, name='change_password'),
 
     url(r'^contacts/formulaire/$', views.ContactezNous, name='contacteznous'),
