@@ -25,37 +25,25 @@
     <h2 class="post-title">Tableau de bord</h2>
   </header>
   
-  <article class="post-content cause-item">
-  <div class="col">
-    <div class="col_left_35_35_35">
-      <article class="block">
-        <h4>Informations personnelles</h4>
-          <ul class="margin">
-            <li><a href="{% url 'asseci:my_account' %}">Mes informations personnelles</a></li>
-            <li><a href="{% url 'asseci:change_password' %}">Modifier mon mot de passe</a></li>
-          </ul>
-      </article>
-    </div>
-    <!--div class="col_middle_35_35_35">
-      <article class="block">
-        <h4>Identité web</h4>
-          <ul class="margin">
-            <li><a href="">Mon identité web</a></li>
-            <li><a href="">Mon avatar</a></li>
-          </ul>
-      </article>
-    </div-->
-    <div class="col_right_35_35_35">
-      <article class="block">
-        <h4>Paramètres</h4>
-          <ul class="margin">
-            <li><a href="">Abonnements</a></li>
-          </ul>
-      </article>
-    </div>
-    <div class="col_footer"></div>
-  </div>
-  
+   <article class="post-content cause-item">
+  <form method="post" action="http://association-2.kiubi-web.com/compte/avatar.html" enctype="multipart/form-data">
+    <fieldset>
+    <h4>Mon avatar</h4><img src="./Association - Votre compte - 21_11_2017ava_files/332" alt="Avatar" align="center">
+    <div class="content_avatar"> 
+      <p>Nous vous conseillons une image (gif, jpeg, png) <strong> d'au moins </strong> 120 pixels de large et 120 pixels de hauteur. Elle sera redimensionnée au besoin.</p>
+      <p class="label_inner"><label for="file_avatar">Votre avatar&nbsp;:</label>
+        <input type="file" name="file_avatar" id="file_avatar" title="Uploader une image de votre ordinateur">
+      </p>
+      <p>Vous pouvez aussi choisir d'utiliser une image déjà en ligne à l'adresse web ci-dessous :</p>
+      <p class="label_inner"><label for="url_avatar">Votre avatar&nbsp;:</label>
+        <input type="text" name="url_avatar" id="url_avatar" value="" title="Copier une image sur Internet" maxlength="100" class="form-control" placeholder="http://www.monsiteweb.com/avatar.gif">
+    </p></div>
+    </fieldset>
+    <p><input type="submit" value="Valider" class="submit btn btn-primary" title="Valider">
+    <input type="button" value="Annuler" class="submit reset btn btn-primary-reset" title="Annuler" onclick="document.location.href=&#39;../compte/&#39;">
+    <input type="hidden" name="act" value="update">
+    <input type="hidden" name="ctl" value="compte_client/gestion_avatar"></p>
+  </form>
 </article>
 </div>
 </div>

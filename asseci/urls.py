@@ -32,14 +32,20 @@ urlpatterns = [
     url(r'^donation/$', views.paiement, name='paiement'),
     url(r'^plan-du-site/$', views.plan, name='plan'),
     url(r'^contact/$', views.contact, name='contact'),
+    
     url(r'^tableau-de-bord/$', views.dashboard, name='dashboard'),
+    url(r'^tableau-de-bord/infos-persos/$', accounts_views.UserUpdateView.as_view(), name='my_account'),
+    url(r'^tableau-de-bord/changer-mot-de-passe/$', accounts_views.change_password, name='change_password'),
+
     url(r'^contacts/formulaire/$', views.ContactezNous, name='contacteznous'),
+
+    url(r'^tableau-de-bord/infos-perso/(?P<pk>\d+)/$', views.infos_persos, name='infos-persos'),
 
     # FORUM
     #url(r'^forum/$', views.forum, name='forum'),
     url(r'^forum/themes/$', views.ForumListView.as_view(), name='forum'),
     url(r'^inscription/$', accounts_views.signup, name='signup'),
-    url(r'^settings/account/$', accounts_views.UserUpdateView.as_view(), name='my_account'),
+    
     url(r'^logout/$', auth_views.LogoutView.as_view(), name='logout'),
     url(r'^login/$', auth_views.LoginView.as_view(template_name='asseci/login.html'), name='login'),
     #url(r'^themes/(?P<pk>\d+)/$', views.board_topics, name='board_topics'),

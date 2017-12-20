@@ -70,6 +70,11 @@ def membre(request):
 def membre2(request):
 	return render(request, 'asseci/membre2.html', {})
 
+def infos_persos(request, pk):
+    infos = get_object_or_404(User, pk=pk)
+    return render(request, 'asseci/infos_persos.html', {'infos': infos,})
+
+
 # Profils & Membres / Id
 def membreId(request):
 	return render(request, 'asseci/membreId.html', {})
