@@ -39,7 +39,7 @@ urlpatterns = [
 
     url(r'^contacts/formulaire/$', views.ContactezNous, name='contacteznous'),
 
-    url(r'^tableau-de-bord/infos-perso/(?P<pk>\d+)/$', views.infos_persos, name='infos-persos'),
+    url(r'^tableau-de-bord/infos-persos/(?P<pk>\d+)/$', views.infos_persos, name='infos-persos'),
 
     # FORUM
     #url(r'^forum/$', views.forum, name='forum'),
