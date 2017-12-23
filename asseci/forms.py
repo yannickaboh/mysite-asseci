@@ -6,7 +6,7 @@ from crispy_forms.layout import Layout
 from crispy_forms.bootstrap import TabHolder, Tab
 from django.contrib.auth.models import User
 
-from .models import Evenement, Post, ContactezNous
+from .models import Evenement, Post, ContactezNous, Board
 
 
 
@@ -26,6 +26,11 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ['message', ]
+
+class BoardForm(forms.ModelForm):
+    class Meta:
+        model = Board
+        fields = ['name', 'description' ]
 
 class ContactezNousForm(forms.ModelForm):
     class Meta:

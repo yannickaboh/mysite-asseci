@@ -44,7 +44,12 @@ urlpatterns = [
     # FORUM
     #url(r'^forum/$', views.forum, name='forum'),
     url(r'^forum/themes/$', views.ForumListView.as_view(), name='forum'),
+    url(r'^forum/themes/ajouter-theme/$', views.ForumCreateView.as_view(), name='forum_create'),
+
+
+
     url(r'^inscription/$', accounts_views.signup, name='signup'),
+
     
     url(r'^logout/$', auth_views.LogoutView.as_view(), name='logout'),
     url(r'^login/$', auth_views.LoginView.as_view(template_name='asseci/login.html'), name='login'),

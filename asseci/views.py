@@ -37,7 +37,7 @@ from django.template.loader import render_to_string
 from .models import Evenement, Annonce, ThemeForum, Board, Topic, Post, ContactezNous
 
 from django.contrib.auth.models import User
-from .forms import PostForm, ContactezNousForm
+from .forms import PostForm, ContactezNousForm, BoardForm
 
 from django.contrib import messages
 
@@ -185,6 +185,13 @@ class ForumListView(ListView):
 	context_object_name = 'boards'
 	paginate_by = 5
 	queryset = Board.objects.all()
+
+# FORUM Create View
+class ForumCreateView(CreateView):
+    model = Board
+    form_class = BoardForm
+    success_url = reverse_lazy('asseci:forum')
+    template_name = 'asseci/new_board.html'
 
 
 
